@@ -25,21 +25,17 @@ namespace Interest.Rate.API.Controllers
 
         //
         // Summary:
-        //     /// Method responsible for action: New (POST). ///
-        //
-        // Parameters:
-        //   command:
-        //     The command param.
+        //     /// Method responsible for action: Index (GET). ///
         //
         [HttpGet]
         [Produces(MediaTypeNames.Application.Json)]
         [ProducesResponseType(typeof(RateResponse), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public ActionResult<RateResponse> Read()
+        public ActionResult<RateResponse> Index()
         {
             _logger.LogInformation("Request: {0}", "Solicitado taxa de juros.");
 
-            return Ok(new RateResponse() { Rate = 0.01 });
+            return Ok(new RateResponse { Rate = 0.01 });
         }
     }
 }

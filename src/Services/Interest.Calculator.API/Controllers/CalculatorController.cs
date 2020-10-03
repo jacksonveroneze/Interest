@@ -1,4 +1,8 @@
-﻿using System.Net.Mime;
+﻿using System;
+using System.Net.Mime;
+using System.Threading.Tasks;
+using Interest.Calculator.AntiCorruption;
+using Interest.Calculator.API.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -6,10 +10,11 @@ using Microsoft.Extensions.Logging;
 namespace Interest.Calculator.API.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("calculajuros")]
     public class CalculatorController : ControllerBase
     {
         private readonly ILogger<CalculatorController> _logger;
+        private readonly IRateService _rateService;
 
         //
         // Summary:
@@ -19,28 +24,33 @@ namespace Interest.Calculator.API.Controllers
         //   logger:
         //     The logger param.
         //
-        public CalculatorController(ILogger<CalculatorController> logger)
+        //   rateService:
+        //     The rateService param.
+        //
+        public CalculatorController(ILogger<CalculatorController> logger, IRateService rateService)
         {
             _logger = logger;
+            _rateService = rateService;
         }
 
         //
         // Summary:
-        //     /// Method responsible for action: New (POST). ///
+        //     /// Method responsible for action: Index (GET). ///
         //
-        // Parameters:
-        //   command:
-        //     The command param.
-        //
-        [HttpPost("read")]
+        [HttpGet]
         [Produces(MediaTypeNames.Application.Json)]
-        //[ProducesResponseType(typeof(CreateCertificateResponse), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(CalculationResponse), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public IActionResult Read()
+        public async Task<ActionResult<CalculationResponse>> Index(int valorInicial, int meses)
         {
-            _logger.LogInformation("Request: {0}", "Generate new certificate");
+            _logger.LogInformation("Request: {0}", "Solicitado cálculo juros.");
 
-            return Ok();
+            RateResponse rateResponse = await _rateService.FindAsync();
+
+            double result = Math.Pow(Convert.ToDouble(valorInicial) * (1 + rateResponse.Rate), Convert.ToDouble(meses));
+
+
+            return Ok(new CalculationResponse { Result = result });
         }
     }
 }
