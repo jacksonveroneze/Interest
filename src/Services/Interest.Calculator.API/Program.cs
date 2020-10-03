@@ -1,11 +1,7 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using Interest.Calculator.API.Configuration;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
+using Serilog;
 
 namespace Interest.Calculator.API
 {
@@ -13,6 +9,10 @@ namespace Interest.Calculator.API
     {
         public static void Main(string[] args)
         {
+            Log.Logger = SerilogConfig.FactoryLogger();
+
+            Log.Information("Starting up");
+
             CreateHostBuilder(args).Build().Run();
         }
 
@@ -21,6 +21,7 @@ namespace Interest.Calculator.API
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
+                    webBuilder.UseSerilog();
                 });
     }
 }

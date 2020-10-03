@@ -1,15 +1,19 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26124.0
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30517.126
 MinimumVisualStudioVersion = 15.0.26124.0
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{C349E26A-F83D-416F-A404-799870849969}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{084700E3-3552-413B-B59C-56B3280C033F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interest.Calculator.API", "src\Services\Interest.Calculator.API\Interest.Calculator.API.csproj", "{8DDE5464-3F5B-4463-A88F-EAF5163E4FEE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Interest.Calculator.API", "src\Services\Interest.Calculator.API\Interest.Calculator.API.csproj", "{8DDE5464-3F5B-4463-A88F-EAF5163E4FEE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interest.Rate.API", "src\Services\Interest.Rate.API\Interest.Rate.API.csproj", "{57C09731-FA15-4426-8214-FEF9C27BBBA2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Interest.Rate.API", "src\Services\Interest.Rate.API\Interest.Rate.API.csproj", "{57C09731-FA15-4426-8214-FEF9C27BBBA2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Rate", "Rate", "{8C7D576A-A068-4C4B-9617-9A7AB7A28C5E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NewFolder1", "NewFolder1", "{101D6B24-3FD9-4360-8AED-2B04025CFF77}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,9 +23,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{8DDE5464-3F5B-4463-A88F-EAF5163E4FEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -49,9 +50,17 @@ Global
 		{57C09731-FA15-4426-8214-FEF9C27BBBA2}.Release|x86.ActiveCfg = Release|Any CPU
 		{57C09731-FA15-4426-8214-FEF9C27BBBA2}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{084700E3-3552-413B-B59C-56B3280C033F} = {C349E26A-F83D-416F-A404-799870849969}
 		{8DDE5464-3F5B-4463-A88F-EAF5163E4FEE} = {084700E3-3552-413B-B59C-56B3280C033F}
 		{57C09731-FA15-4426-8214-FEF9C27BBBA2} = {084700E3-3552-413B-B59C-56B3280C033F}
+		{8C7D576A-A068-4C4B-9617-9A7AB7A28C5E} = {084700E3-3552-413B-B59C-56B3280C033F}
+		{101D6B24-3FD9-4360-8AED-2B04025CFF77} = {084700E3-3552-413B-B59C-56B3280C033F}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4B105A6A-9D0C-4AEF-832C-C13CDA1C085C}
 	EndGlobalSection
 EndGlobal

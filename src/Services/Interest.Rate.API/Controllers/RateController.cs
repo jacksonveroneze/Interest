@@ -21,9 +21,7 @@ namespace Interest.Rate.API.Controllers
         //     The logger param.
         //
         public RateController(ILogger<RateController> logger)
-        {
-            _logger = logger;
-        }
+            => _logger = logger;
 
         //
         // Summary:
