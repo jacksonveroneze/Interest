@@ -37,11 +37,11 @@ namespace Interest.Rate.API.Controllers
         [Produces(MediaTypeNames.Application.Json)]
         [ProducesResponseType(typeof(RateResponse), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public IActionResult Read()
+        public ActionResult<RateResponse> Read()
         {
             _logger.LogInformation("Request: {0}", "Solicitado taxa de juros.");
 
-            return Ok(new RateResponse() {Rate = 0.01});
+            return Ok(new RateResponse() { Rate = 0.01 });
         }
     }
 }
