@@ -2,7 +2,7 @@ version: "3.7"
 services:
     calculator-api:
         build:
-            context: .
+            context: src/Services/Interest.Calculator.API
             dockerfile: Dockerfile
         ports:
             - 8000:80
@@ -13,7 +13,7 @@ services:
 
     rate-api:
         build:
-            context: .
+            context: src/Services/Interest.Rate.API
             dockerfile: Dockerfile
         ports:
             - 8001:80
@@ -21,8 +21,3 @@ services:
             - ASPNETCORE_URLS=http://+:80
             - DOTNET_RUNNING_IN_CONTAINER=true
             - ASPNETCORE_ENVIRONMENT=Production
-
-networks:
-    default:
-        external:
-        name: docker-network
