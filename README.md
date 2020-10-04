@@ -49,9 +49,8 @@ Siga estas etapas para para rodar o projeto em produção:
      docker-compose up -d
      ```
   3. Agora seus projetos estão em execução, abra o navegador e acesse: https://localhost:6001/swagger:
-     ```
+
      [https://localhost:8001/swagger](https://localhost:8001/swagger)
-     ```
 
 ## Technologies:
 
