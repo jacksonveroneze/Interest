@@ -50,6 +50,20 @@ Siga estas etapas para para rodar o projeto em produção:
      ```
   3. Agora seus projetos estão em execução, abra o navegador e acesse: https://localhost:8001/swagger:
 
+## Exemplos
+
+## Api - Taxa de juros
+
+```
+curl -X GET "https://localhost:5001/taxaJuros" -H "accept: application/json"
+````
+
+## Api - Cálculo juros
+
+```
+curl -X GET "https://localhost:6001/calculajuros?valorInicial=100&meses=5" -H "accept: application/json"
+````
+
 ## Technologies:
 
 - C# 8.0
