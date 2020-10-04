@@ -34,9 +34,6 @@ Siga estas etapas para para rodar o projeto em produção:
      dotnet run
      ```
   4. Agora seus projetos estão em execução, abra o navegador e acesse: https://localhost:6001/swagger:
-     ```
-     [https://localhost:6001/swagger](https://localhost:6001/swagger)
-     ```
 
 ### Setup (Com Docker)
 
