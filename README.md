@@ -48,20 +48,22 @@ Siga estas etapas para para rodar o projeto em produção:
      ```
      docker-compose up -d
      ```
-  3. Agora seus projetos estão em execução, abra o navegador e acesse: https://localhost:6001/swagger:
-
-     [https://localhost:8001/swagger](https://localhost:8001/swagger)
+  3. Agora seus projetos estão em execução, abra o navegador e acesse: https://localhost:8001/swagger:
 
 ## Technologies:
 
 - C# 8.0
 - ASP.NET Core 3.1
-- ASP.NET WebApi Cor
+- ASP.NET WebApi Core 3.1
 - .NET Core Native DI
+- Refit
+- Polly
+- Serilog
+- Docker
 
 ## Autor
 * **Jackson Veroneze** - *Contributor* - [JacksonVeroneze](https://github.com/JacksonVeroneze)
 
 
 ## Licença
-This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/jacksonveroneze/Shopping/blob/develop/LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/jacksonveroneze/Interest/blob/develop/LICENSE) file for details.
