@@ -7,19 +7,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{C349E26A-F83
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{084700E3-3552-413B-B59C-56B3280C033F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Interest.Calculator.API", "src\Services\Interest.Calculator.API\Interest.Calculator.API.csproj", "{8DDE5464-3F5B-4463-A88F-EAF5163E4FEE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Interest.Calculator.API", "src\Services\Calculator\Interest.Calculator.API\Interest.Calculator.API.csproj", "{8DDE5464-3F5B-4463-A88F-EAF5163E4FEE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Interest.Rate.API", "src\Services\Interest.Rate.API\Interest.Rate.API.csproj", "{57C09731-FA15-4426-8214-FEF9C27BBBA2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Interest.Rate.API", "src\Services\Rate\Interest.Rate.API\Interest.Rate.API.csproj", "{57C09731-FA15-4426-8214-FEF9C27BBBA2}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Rate", "Rate", "{8C7D576A-A068-4C4B-9617-9A7AB7A28C5E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Calculator", "Calculator", "{101D6B24-3FD9-4360-8AED-2B04025CFF77}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Interest.Calculator.Tests", "src\Services\Interest.Calculator.Tests\Interest.Calculator.Tests.csproj", "{D6E14E4C-D371-43A0-9FAE-F22CEE6256BF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Interest.Calculator.Tests", "src\Services\Calculator\Interest.Calculator.Tests\Interest.Calculator.Tests.csproj", "{D6E14E4C-D371-43A0-9FAE-F22CEE6256BF}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Interest.Calculator.Application", "src\Services\Interest.Calculator.Application\Interest.Calculator.Application.csproj", "{FE2F2AEB-3D58-4EA4-904C-1618D704B934}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Interest.Calculator.Application", "src\Services\Calculator\Interest.Calculator.Application\Interest.Calculator.Application.csproj", "{FE2F2AEB-3D58-4EA4-904C-1618D704B934}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interest.Rate.Tests", "src\Services\Interest.Rate.Tests\Interest.Rate.Tests.csproj", "{E879B149-90C6-4F91-AB28-6521D16CA351}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interest.Rate.Tests", "src\Services\Rate\Interest.Rate.Tests\Interest.Rate.Tests.csproj", "{E879B149-90C6-4F91-AB28-6521D16CA351}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BuildingBlocks", "BuildingBlocks", "{BEFF403C-C551-4A54-B9C0-ABA795711895}"
 EndProject
