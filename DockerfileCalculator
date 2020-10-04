@@ -1,0 +1,16 @@
+FROM mcr.microsoft.com/dotnet/core/sdk:3.1-alpine AS build-env
+WORKDIR /app
+
+ADD src/Services/Calculator/Interest.Calculator.API ./src/Services/Calculator/Interest.Calculator.API/
+ADD src/Services/Calculator/Interest.Calculator.Application ./src/Services/Calculator/Interest.Calculator.Application/
+ADD src/BuildingBlocks/Interest.Core ./src/BuildingBlocks/Interest.Core
+RUN ls
+RUN dotnet restore src/Services/Calculator/Interest.Calculator.API/Interest.Calculator.API.csproj
+
+RUN dotnet publish src/Services/Calculator/Interest.Calculator.API -c Release -o out
+
+# Build da imagem
+FROM mcr.microsoft.com/dotnet/core/aspnet:3.1-alpine
+WORKDIR /app
+COPY --from=build-env /app/out .
+ENTRYPOINT ["dotnet", "Interest.Calculator.API.dll"]
