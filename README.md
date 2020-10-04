@@ -56,12 +56,20 @@ Siga estas etapas para para rodar o projeto em produção:
 
 ```
 curl -X GET "https://localhost:5001/taxaJuros" -H "accept: application/json"
+
+{
+  "rate": 0.01
+}
 ````
 
 ## Api - Cálculo juros
 
 ```
 curl -X GET "https://localhost:6001/calculajuros?valorInicial=100&meses=5" -H "accept: application/json"
+
+{
+  "result": 105.1
+}
 ````
 
 ## Technologies:
