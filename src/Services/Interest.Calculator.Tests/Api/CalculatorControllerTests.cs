@@ -22,7 +22,7 @@ namespace Interest.Calculator.Tests.Api
                 .ConfigureWebHost(webHost =>
                 {
                     webHost.UseTestServer();
-                    webHost.UseStartup<StartupTests>();
+                    webHost.UseStartup<Startup>();
                 });
 
             var host = hostBuilder.Start();

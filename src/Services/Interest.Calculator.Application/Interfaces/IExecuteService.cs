@@ -5,6 +5,6 @@ namespace Interest.Calculator.Application.Interfaces
 {
     public interface IExecuteService
     {
-        Task<CalculationResponse> Execute(int initialValue, int months);
+        Task<CalculationResponse> Execute(double initialValue, double months);
     }
 }

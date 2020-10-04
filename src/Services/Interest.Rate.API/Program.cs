@@ -1,4 +1,4 @@
-using Interest.Rate.API.Configuration;
+using Interest.Core;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 using Serilog;
@@ -9,7 +9,7 @@ namespace Interest.Rate.API
     {
         public static void Main(string[] args)
         {
-            Log.Logger = SerilogConfig.FactoryLogger();
+            Log.Logger = Logger.FactoryLogger();
 
             Log.Information("Starting up");
 

@@ -38,7 +38,7 @@ namespace Interest.Calculator.Application.Services
         //   months:
         //     The months param.
         //
-        public async Task<CalculationResponse> Execute(int initialValue, int months)
+        public async Task<CalculationResponse> Execute(double initialValue, double months)
         {
             RateResponse rateResponse = await _rateService.FindAsync();
 

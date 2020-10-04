@@ -2,6 +2,6 @@
 {
     public interface ICalculateService
     {
-        public double Calc(int initialValue, int months, double rate);
+        public double Calc(double initialValue, double months, double rate);
     }
 }

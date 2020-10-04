@@ -20,8 +20,16 @@ namespace Interest.Calculator.API
     {
         public IConfiguration Configuration { get; }
 
-        public Startup(IConfiguration configuration)
-            => Configuration = configuration;
+        public Startup(IHostEnvironment hostEnvironment)
+        {
+            IConfigurationBuilder builder = new ConfigurationBuilder()
+                .SetBasePath(hostEnvironment.ContentRootPath)
+                .AddJsonFile("appsettings.json", true, true)
+                .AddJsonFile($"appsettings.{hostEnvironment.EnvironmentName}.json", true, true)
+                .AddEnvironmentVariables();
+
+            Configuration = builder.Build();
+        }
 
         public void ConfigureServices(IServiceCollection services)
         {
