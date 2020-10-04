@@ -49,7 +49,7 @@ Siga estas etapas para para rodar o projeto em produção:
 
 ## Exemplos
 
-## Api - Taxa de juros
+### Api - Taxa de juros
 
 ```
 curl -X GET "https://localhost:5001/taxaJuros" -H "accept: application/json"
@@ -61,7 +61,7 @@ curl -X GET "https://localhost:5001/taxaJuros" -H "accept: application/json"
 curl -X GET "https://localhost:5001/health"
 ````
 
-## Api - Cálculo juros
+### Api - Cálculo juros
 
 ```
 curl -X GET "https://localhost:6001/calculajuros?valorInicial=100&meses=5" -H "accept: application/json"
@@ -72,6 +72,20 @@ curl -X GET "https://localhost:6001/calculajuros?valorInicial=100&meses=5" -H "a
 
 curl -X GET "https://localhost:5001/health"
 ````
+
+### Api - Taxa de juros (Healthcheck)
+
+```
+curl -X GET "https://localhost:5001/health"
+````
+
+### Api - Cálculo juros (Healthcheck)
+
+```
+curl -X GET "https://localhost:5001/health"
+````
+
+
 
 ## Technologies:
 
