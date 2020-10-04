@@ -8,7 +8,7 @@ Use as intruções abaixo para rodar o projeto.
 #### Requisitos
 Você precisará das seguintes ferramentas se desejar codificar algo:
 
-* [Visual Studio Code or 2017/2019](https://www.visualstudio.com/downloads/)
+* [Visual Studio Code ou 2019](https://www.visualstudio.com/downloads/)
 * [.NET Core SDK 3.1](https://www.microsoft.com/net/download)
 
 Você precisará das seguintes ferramentas se desejar rodar o projeto usando docker:
