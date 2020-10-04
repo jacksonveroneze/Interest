@@ -1,11 +1,11 @@
-# Interest
+## Interest
 
 Projeto desenvolvido com o objetivo de realizar o cálculo de juros.
 
-## Iniciando
+### Iniciando
 Use as intruções abaixo para rodar o projeto.
 
-### Requisitos
+#### Requisitos
 Você precisará das seguintes ferramentas se desejar codificar algo:
 
 * [Visual Studio Code or 2017/2019](https://www.visualstudio.com/downloads/)
@@ -16,7 +16,7 @@ Você precisará das seguintes ferramentas se desejar rodar o projeto usando doc
 * [Docker](https://www.docker.com/)
 * [Docker-compose](https://docs.docker.com/compose/install/)
 
-### Setup
+#### Setup
 Siga estas etapas para para rodar o projeto em produção:
 
   1. Clone o repositório
@@ -35,7 +35,7 @@ Siga estas etapas para para rodar o projeto em produção:
      ```
   4. Agora seus projetos estão em execução, abra o navegador e acesse: https://localhost:6001/swagger:
 
-### Setup (Com Docker)
+#### Setup (Com Docker)
 
 Siga estas etapas para para rodar o projeto em produção:
 
@@ -47,9 +47,9 @@ Siga estas etapas para para rodar o projeto em produção:
      ```
   3. Agora seus projetos estão em execução, abra o navegador e acesse: https://localhost:8001/swagger:
 
-## Exemplos
+### Exemplos
 
-### Api - Taxa de juros
+#### Api - Taxa de juros
 
 ```
 curl -X GET "https://localhost:5001/taxaJuros" -H "accept: application/json"
@@ -61,7 +61,7 @@ curl -X GET "https://localhost:5001/taxaJuros" -H "accept: application/json"
 curl -X GET "https://localhost:5001/health"
 ````
 
-### Api - Cálculo juros
+#### Api - Cálculo juros
 
 ```
 curl -X GET "https://localhost:6001/calculajuros?valorInicial=100&meses=5" -H "accept: application/json"
@@ -73,21 +73,19 @@ curl -X GET "https://localhost:6001/calculajuros?valorInicial=100&meses=5" -H "a
 curl -X GET "https://localhost:5001/health"
 ````
 
-### Api - Taxa de juros (Healthcheck)
+#### Api - Taxa de juros (Healthcheck)
 
 ```
 curl -X GET "https://localhost:5001/health"
 ````
 
-### Api - Cálculo juros (Healthcheck)
+#### Api - Cálculo juros (Healthcheck)
 
 ```
 curl -X GET "https://localhost:5001/health"
 ````
 
-
-
-## Technologies:
+### Technologies:
 
 - C# 8.0
 - ASP.NET Core 3.1
@@ -98,9 +96,9 @@ curl -X GET "https://localhost:5001/health"
 - Serilog
 - Docker
 
-## Autor
+### Autor
 * **Jackson Veroneze** - *Contributor* - [JacksonVeroneze](https://github.com/JacksonVeroneze)
 
 
-## Licença
+### Licença
 This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/jacksonveroneze/Interest/blob/develop/LICENSE) file for details.
