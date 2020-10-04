@@ -1,9 +1,24 @@
 ﻿using System;
+using Interest.Calculator.Application.Interfaces;
 
 namespace Interest.Calculator.Application.Services
 {
-    public class CalculateService
+    public class CalculateService : ICalculateService
     {
+        //
+        // Summary:
+        //     /// Method responsible for execute calc. ///
+        //
+        // Parameters:
+        //   initialValue:
+        //     The initialValue param.
+        //
+        //   months:
+        //     The months param.
+        //
+        //   rate:
+        //     The rate param.
+        //
         public double Calc(int initialValue, int months, double rate)
         {
             if (initialValue <= 0)

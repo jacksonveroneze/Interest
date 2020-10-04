@@ -15,11 +15,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Rate", "Rate", "{8C7D576A-A
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Calculator", "Calculator", "{101D6B24-3FD9-4360-8AED-2B04025CFF77}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Interest.Calculator.AntiCorruption", "src\Services\Interest.Calculator.AntiCorruption\Interest.Calculator.AntiCorruption.csproj", "{A946EC16-F8BF-4CD4-99CD-17D87ED99BC5}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Interest.Calculator.Tests", "src\Services\Interest.Calculator.Tests\Interest.Calculator.Tests.csproj", "{D6E14E4C-D371-43A0-9FAE-F22CEE6256BF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interest.Calculator.Application", "src\Services\Interest.Calculator.Application\Interest.Calculator.Application.csproj", "{FE2F2AEB-3D58-4EA4-904C-1618D704B934}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Interest.Calculator.Application", "src\Services\Interest.Calculator.Application\Interest.Calculator.Application.csproj", "{FE2F2AEB-3D58-4EA4-904C-1618D704B934}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -55,18 +53,6 @@ Global
 		{57C09731-FA15-4426-8214-FEF9C27BBBA2}.Release|x64.Build.0 = Release|Any CPU
 		{57C09731-FA15-4426-8214-FEF9C27BBBA2}.Release|x86.ActiveCfg = Release|Any CPU
 		{57C09731-FA15-4426-8214-FEF9C27BBBA2}.Release|x86.Build.0 = Release|Any CPU
-		{A946EC16-F8BF-4CD4-99CD-17D87ED99BC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A946EC16-F8BF-4CD4-99CD-17D87ED99BC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A946EC16-F8BF-4CD4-99CD-17D87ED99BC5}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{A946EC16-F8BF-4CD4-99CD-17D87ED99BC5}.Debug|x64.Build.0 = Debug|Any CPU
-		{A946EC16-F8BF-4CD4-99CD-17D87ED99BC5}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{A946EC16-F8BF-4CD4-99CD-17D87ED99BC5}.Debug|x86.Build.0 = Debug|Any CPU
-		{A946EC16-F8BF-4CD4-99CD-17D87ED99BC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A946EC16-F8BF-4CD4-99CD-17D87ED99BC5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A946EC16-F8BF-4CD4-99CD-17D87ED99BC5}.Release|x64.ActiveCfg = Release|Any CPU
-		{A946EC16-F8BF-4CD4-99CD-17D87ED99BC5}.Release|x64.Build.0 = Release|Any CPU
-		{A946EC16-F8BF-4CD4-99CD-17D87ED99BC5}.Release|x86.ActiveCfg = Release|Any CPU
-		{A946EC16-F8BF-4CD4-99CD-17D87ED99BC5}.Release|x86.Build.0 = Release|Any CPU
 		{D6E14E4C-D371-43A0-9FAE-F22CEE6256BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D6E14E4C-D371-43A0-9FAE-F22CEE6256BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D6E14E4C-D371-43A0-9FAE-F22CEE6256BF}.Debug|x64.ActiveCfg = Debug|Any CPU
@@ -101,7 +87,6 @@ Global
 		{57C09731-FA15-4426-8214-FEF9C27BBBA2} = {8C7D576A-A068-4C4B-9617-9A7AB7A28C5E}
 		{8C7D576A-A068-4C4B-9617-9A7AB7A28C5E} = {084700E3-3552-413B-B59C-56B3280C033F}
 		{101D6B24-3FD9-4360-8AED-2B04025CFF77} = {084700E3-3552-413B-B59C-56B3280C033F}
-		{A946EC16-F8BF-4CD4-99CD-17D87ED99BC5} = {101D6B24-3FD9-4360-8AED-2B04025CFF77}
 		{D6E14E4C-D371-43A0-9FAE-F22CEE6256BF} = {101D6B24-3FD9-4360-8AED-2B04025CFF77}
 		{FE2F2AEB-3D58-4EA4-904C-1618D704B934} = {101D6B24-3FD9-4360-8AED-2B04025CFF77}
 	EndGlobalSection

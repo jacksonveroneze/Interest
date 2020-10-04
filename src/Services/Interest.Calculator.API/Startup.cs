@@ -1,7 +1,8 @@
 using System;
 using System.Net.Http;
-using Interest.Calculator.AntiCorruption;
 using Interest.Calculator.API.Configuration;
+using Interest.Calculator.Application.Http;
+using Interest.Calculator.Application.Interfaces;
 using Interest.Calculator.Application.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -31,13 +32,14 @@ namespace Interest.Calculator.API
                     Console.WriteLine($"Tentando pela {retryCount} vez!")
                 );
 
-            services.AddRefitClient<IRateService>()
+            services.AddRefitClient<IRateHttpService>()
                 .ConfigureHttpClient(c => c.BaseAddress = new Uri(Configuration["UrlRateAPI"]))
                 .AddPolicyHandler(retryPolicy);
 
-            services.AddSwaggerConfiguration();
-
+            services.AddTransient<ICalculateService, CalculateService>();
             services.AddTransient<IExecuteService, ExecuteService>();
+
+            services.AddSwaggerConfiguration();
 
             services.AddControllers();
         }

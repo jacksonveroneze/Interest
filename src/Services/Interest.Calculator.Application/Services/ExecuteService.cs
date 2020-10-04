@@ -1,34 +1,48 @@
 ﻿using System.Threading.Tasks;
-using Interest.Calculator.AntiCorruption;
+using Interest.Calculator.Application.Http;
+using Interest.Calculator.Application.Interfaces;
 using Interest.Calculator.Application.Models;
 
 namespace Interest.Calculator.Application.Services
 {
     public class ExecuteService : IExecuteService
     {
-        private readonly IRateService _rateService;
+        private readonly IRateHttpService _rateService;
+        private readonly ICalculateService _calculateService;
 
         //
         // Summary:
         //     /// Method responsible for initializing the controller. ///
         //
         // Parameters:
-        //   logger:
-        //     The logger param.
-        //
         //   rateService:
         //     The rateService param.
         //
-        public ExecuteService(IRateService rateService)
+        //   calculateService:
+        //     The calculateService param.
+        //
+        public ExecuteService(IRateHttpService rateService, ICalculateService calculateService)
         {
             _rateService = rateService;
+            _calculateService = calculateService;
         }
 
+        //
+        // Summary:
+        //     /// Method responsible for execute calculate. ///
+        //
+        // Parameters:
+        //   initialValue:
+        //     The initialValue param.
+        //
+        //   months:
+        //     The months param.
+        //
         public async Task<CalculationResponse> Execute(int initialValue, int months)
         {
             RateResponse rateResponse = await _rateService.FindAsync();
 
-            var result = new CalculateService().Calc(initialValue, months, rateResponse.Rate);
+            double result = _calculateService.Calc(initialValue, months, rateResponse.Rate);
 
             return new CalculationResponse() { Result = result };
         }

@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Interest.Calculator.AntiCorruption\Interest.Calculator.AntiCorruption.csproj" />
+    <PackageReference Include="Refit" Version="5.2.1" />
   </ItemGroup>
 
 </Project>

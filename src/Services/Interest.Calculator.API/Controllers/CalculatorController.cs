@@ -1,6 +1,7 @@
 ﻿using System.Net.Mime;
 using System.Threading.Tasks;
-using Interest.Calculator.API.Models;
+using Interest.Calculator.Application.Interfaces;
+using Interest.Calculator.Application.Models;
 using Interest.Calculator.Application.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
