@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Interest.Calculator.API;
@@ -31,20 +32,40 @@ namespace Interest.Calculator.Tests.Api
             _httpClient.BaseAddress = new Uri("https://localhost:6001");
         }
 
-        [Fact(DisplayName = "Adicionar item em novo pedido")]
-        [Trait("Categoria", "Integração Web - Pedido")]
-        public async Task AdicionarItem_NovoPedido_DeveAtualizarValorTotal()
+        [Fact(DisplayName = "Deve calcular corretamente a taxa de juros.")]
+        [Trait("Categoria", "CalculatorController")]
+        public async Task CalculatorController_Index_DeveEfetuarOCalculoCorretamente()
         {
             // Arrange
-            var response = await _httpClient.GetAsync("calculajuros?valorInicial=0&meses=5");
+            HttpResponseMessage response = await _httpClient.GetAsync("calculajuros?valorInicial=100&meses=5");
 
             // Act
-            var responseString = await response.Content.ReadAsStringAsync();
+            string responseString = await response.Content.ReadAsStringAsync();
 
             CalculationResponse result = JsonConvert.DeserializeObject<CalculationResponse>(responseString);
 
             // Assert
             Assert.Equal(105.1, result.Result);
+        }
+
+        [Fact(DisplayName = "Deve retornar erro quando informar o valor inicial menor que zero.")]
+        [Trait("Categoria", "CalculatorController")]
+        public async Task CalculatorController_Index_DeveRetornarErroValorInicialIgualAZero()
+        {
+            // Arrange && Act
+            HttpResponseMessage response = await _httpClient.GetAsync("calculajuros?valorInicial=0&meses=5");
+
+            Assert.Equal(HttpStatusCode.BadRequest, response.StatusCode);
+        }
+
+        [Fact(DisplayName = "Deve retornar erro quando informar os meses menor que zero.")]
+        [Trait("Categoria", "CalculatorController")]
+        public async Task CalculatorController_Index_DeveRetornarErroMesesIgualAZero()
+        {
+            // Arrange && Act
+            HttpResponseMessage response = await _httpClient.GetAsync("calculajuros?valorInicial=100&meses=0");
+
+            Assert.Equal(HttpStatusCode.BadRequest, response.StatusCode);
         }
     }
 }
