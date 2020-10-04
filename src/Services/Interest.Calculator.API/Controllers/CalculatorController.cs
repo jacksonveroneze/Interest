@@ -1,4 +1,5 @@
-﻿using System.Net.Mime;
+﻿using System;
+using System.Net.Mime;
 using System.Threading.Tasks;
 using Interest.Calculator.Application.Interfaces;
 using Interest.Calculator.Application.Models;
@@ -43,7 +44,16 @@ namespace Interest.Calculator.API.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult<CalculationResponse>> Index(int valorInicial, int meses)
         {
-            return Ok(await _executeService.Execute(valorInicial, meses));
+            try
+            {
+                CalculationResponse calculationResponse = await _executeService.Execute(valorInicial, meses);
+
+                return Ok(calculationResponse);
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
         }
     }
 }
