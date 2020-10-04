@@ -49,6 +49,8 @@ namespace Interest.Calculator.API
 
             services.AddSwaggerConfiguration();
 
+            services.AddHealthChecks();
+
             services.AddControllers();
         }
 
@@ -64,6 +66,8 @@ namespace Interest.Calculator.API
             app.UseAuthorization();
 
             app.UseSwaggerConfiguration();
+
+            app.UseHealthChecks("/health");
 
             app.UseEndpoints(endpoints => endpoints.MapControllers());
         }
