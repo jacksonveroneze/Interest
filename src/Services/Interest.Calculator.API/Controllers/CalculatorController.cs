@@ -1,8 +1,7 @@
-﻿using System;
-using System.Net.Mime;
+﻿using System.Net.Mime;
 using System.Threading.Tasks;
-using Interest.Calculator.AntiCorruption;
 using Interest.Calculator.API.Models;
+using Interest.Calculator.Application.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -14,7 +13,7 @@ namespace Interest.Calculator.API.Controllers
     public class CalculatorController : ControllerBase
     {
         private readonly ILogger<CalculatorController> _logger;
-        private readonly IRateService _rateService;
+        private readonly IExecuteService _executeService;
 
         //
         // Summary:
@@ -24,13 +23,13 @@ namespace Interest.Calculator.API.Controllers
         //   logger:
         //     The logger param.
         //
-        //   rateService:
-        //     The rateService param.
+        //   executeService:
+        //     The executeService param.
         //
-        public CalculatorController(ILogger<CalculatorController> logger, IRateService rateService)
+        public CalculatorController(ILogger<CalculatorController> logger, IExecuteService executeService)
         {
             _logger = logger;
-            _rateService = rateService;
+            _executeService = executeService;
         }
 
         //
@@ -43,14 +42,7 @@ namespace Interest.Calculator.API.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult<CalculationResponse>> Index(int valorInicial, int meses)
         {
-            _logger.LogInformation("Request: {0}", "Solicitado cálculo juros.");
-
-            RateResponse rateResponse = await _rateService.FindAsync();
-
-            double result = Math.Pow(Convert.ToDouble(valorInicial) * (1 + rateResponse.Rate), Convert.ToDouble(meses));
-
-
-            return Ok(new CalculationResponse { Result = result });
+            return Ok(await _executeService.Execute(valorInicial, meses));
         }
     }
 }

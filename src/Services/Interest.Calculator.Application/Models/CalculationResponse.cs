@@ -1,4 +1,4 @@
-namespace Interest.Calculator.API.Models
+namespace Interest.Calculator.Application.Models
 {
     public class CalculationResponse
     {

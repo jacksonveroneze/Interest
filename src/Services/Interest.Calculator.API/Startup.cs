@@ -2,6 +2,7 @@ using System;
 using System.Net.Http;
 using Interest.Calculator.AntiCorruption;
 using Interest.Calculator.API.Configuration;
+using Interest.Calculator.Application.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -35,6 +36,8 @@ namespace Interest.Calculator.API
                 .AddPolicyHandler(retryPolicy);
 
             services.AddSwaggerConfiguration();
+
+            services.AddTransient<IExecuteService, ExecuteService>();
 
             services.AddControllers();
         }

@@ -14,6 +14,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Interest.Calculator.AntiCorruption\Interest.Calculator.AntiCorruption.csproj" />
+    <ProjectReference Include="..\Interest.Calculator.Application\Interest.Calculator.Application.csproj" />
   </ItemGroup>
 
 </Project>

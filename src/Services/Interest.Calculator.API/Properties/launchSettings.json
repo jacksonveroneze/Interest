@@ -11,7 +11,7 @@
     "profiles": {
         "Interest.Calculator.API": {
             "commandName": "Project",
-            "launchBrowser": true,
+            "launchBrowser": false,
             "launchUrl": "swagger",
             "applicationUrl": "https://localhost:6001;http://localhost:6000",
             "environmentVariables": {
