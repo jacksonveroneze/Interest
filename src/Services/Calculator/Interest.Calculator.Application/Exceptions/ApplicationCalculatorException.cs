@@ -4,7 +4,7 @@ namespace Interest.Calculator.Application.Exceptions
 {
     public class ApplicationCalculatorException : Exception
     {
-        public ApplicationCalculatorException()
+        private ApplicationCalculatorException()
         {
         }
 
