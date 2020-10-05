@@ -43,6 +43,7 @@ Siga estas etapas para para rodar o projeto em produção:
 
   2. No diretório raiz, execute o comando:
      ```
+     docker-compose build
      docker-compose up -d
      ```
   3. Agora seus projetos estão em execução, abra o navegador e acesse: https://localhost:8000/swagger

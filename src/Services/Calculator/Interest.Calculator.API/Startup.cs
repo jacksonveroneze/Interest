@@ -41,7 +41,6 @@ namespace Interest.Calculator.API
                     Console.WriteLine($"Tentando pela {retryCount} vez!")
                 );
 
-
             services.AddRefitClient<IRateHttpService>()
                 .ConfigureHttpClient(c => c.BaseAddress = new Uri(Configuration["UrlRateAPI"]))
                 .ConfigurePrimaryHttpMessageHandler(sp => new HttpClientHandler

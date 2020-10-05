@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Net.Mime;
 using System.Threading.Tasks;
+using Interest.Calculator.API.Models;
 using Interest.Calculator.Application.Interfaces;
 using Interest.Calculator.Application.Models;
 using Interest.Calculator.Application.Services;
@@ -41,7 +42,7 @@ namespace Interest.Calculator.API.Controllers
         [HttpGet]
         [Produces(MediaTypeNames.Application.Json)]
         [ProducesResponseType(typeof(CalculationResponse), StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(typeof(ErrorResult), StatusCodes.Status400BadRequest)]
         public async Task<ActionResult<CalculationResponse>> Index(double valorInicial, int meses)
         {
             try
@@ -52,7 +53,7 @@ namespace Interest.Calculator.API.Controllers
             }
             catch (Exception e)
             {
-                return BadRequest(e.Message);
+                return BadRequest(new ErrorResult() { Message = e.Message});
             }
         }
     }
