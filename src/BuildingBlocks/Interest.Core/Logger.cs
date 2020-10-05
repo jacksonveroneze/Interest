@@ -6,6 +6,10 @@ namespace Interest.Core
 {
     public class Logger
     {
+        protected Logger()
+        {
+        }
+
         public static ILogger FactoryLogger()
         {
             return new LoggerConfiguration()

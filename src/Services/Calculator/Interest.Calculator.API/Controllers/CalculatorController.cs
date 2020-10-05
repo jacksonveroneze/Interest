@@ -4,7 +4,6 @@ using System.Threading.Tasks;
 using Interest.Calculator.API.Models;
 using Interest.Calculator.Application.Interfaces;
 using Interest.Calculator.Application.Models;
-using Interest.Calculator.Application.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -45,6 +44,8 @@ namespace Interest.Calculator.API.Controllers
         [ProducesResponseType(typeof(ErrorResult), StatusCodes.Status400BadRequest)]
         public async Task<ActionResult<CalculationResponse>> Index(double valorInicial, int meses)
         {
+            _logger.LogInformation("Request: {0}", "Solicitado cálculo de juros.");
+
             try
             {
                 CalculationResponse calculationResponse = await _executeService.Execute(valorInicial, meses);

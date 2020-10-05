@@ -66,8 +66,6 @@ namespace Interest.Calculator.API
             if (env.IsDevelopment())
                 app.UseDeveloperExceptionPage();
 
-            //app.UseHttpsRedirection();
-
             app.UseRouting();
 
             app.UseAuthorization();
