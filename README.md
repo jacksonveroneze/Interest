@@ -58,8 +58,6 @@ curl -X GET "http://localhost:5000/taxaJuros" -H "accept: application/json"
 {
   "rate": 0.01
 }
-
-curl -X GET "http://localhost:5000/health"
 ````
 
 #### Api - Cálculo juros
@@ -70,8 +68,6 @@ curl -X GET "http://localhost:6000/calculajuros?valorInicial=100&meses=5" -H "ac
 {
   "result": 105.1
 }
-
-curl -X GET "http://localhost:5000/health"
 ````
 
 #### Api - Taxa de juros (Healthcheck)
