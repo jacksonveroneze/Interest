@@ -98,8 +98,8 @@ curl -X GET "http://localhost:6000/health"
 - Docker
 
 ### Autor
-* **Jackson Veroneze** - *Contributor* - [JacksonVeroneze](http://github.com/JacksonVeroneze)
+* **Jackson Veroneze** - *Contribuidor* - [JacksonVeroneze](http://github.com/JacksonVeroneze)
 
 
 ### Licença
-This project is licensed under the MIT License - see the [LICENSE.md](http://github.com/jacksonveroneze/Interest/blob/develop/LICENSE) file for details.
+Este projeto está licenciado sob a Licença MIT: [LICENSE.md](http://github.com/jacksonveroneze/Interest/blob/develop/LICENSE).
