@@ -18,14 +18,14 @@ namespace Interest.Calculator.Tests.Api
 
         public CalculatorControllerTests()
         {
-            var hostBuilder = new HostBuilder()
+            IHostBuilder hostBuilder = new HostBuilder()
                 .ConfigureWebHost(webHost =>
                 {
                     webHost.UseTestServer();
                     webHost.UseStartup<Startup>();
                 });
 
-            var host = hostBuilder.Start();
+            IHost host = hostBuilder.Start();
 
             _httpClient = host.GetTestClient();
 
