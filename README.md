@@ -101,3 +101,4 @@ curl -X GET "http://localhost:6000/health"
 
 ### Licença
 Este projeto está licenciado sob a Licença MIT: [LICENSE.md](http://github.com/jacksonveroneze/Interest/blob/develop/LICENSE).
+
