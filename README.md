@@ -96,6 +96,8 @@ curl -X GET "http://localhost:6000/health"
 - Polly
 - Serilog
 - Docker
+- Github Actions
+- SonarQube
 
 ### Autor
 * **Jackson Veroneze** - *Contribuidor* - [JacksonVeroneze](http://github.com/JacksonVeroneze)
