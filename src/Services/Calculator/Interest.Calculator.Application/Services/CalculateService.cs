@@ -1,4 +1,5 @@
 ﻿using System;
+using Interest.Calculator.Application.Exceptions;
 using Interest.Calculator.Application.Interfaces;
 
 namespace Interest.Calculator.Application.Services
@@ -22,13 +23,13 @@ namespace Interest.Calculator.Application.Services
         public double Calc(double initialValue, int months, double rate)
         {
             if (initialValue <= 0)
-                throw new ApplicationException("O valor inicial deve ser maior que zero.");
+                throw new ApplicationCalculatorException("O valor inicial deve ser maior que zero.");
 
             if (months <= 0)
-                throw new ApplicationException("O total de meses deve ser maior que zero.");
+                throw new ApplicationCalculatorException("O total de meses deve ser maior que zero.");
 
             if (rate < 0)
-                throw new ApplicationException("A taxa de juros deve maior ou igual a zero.");
+                throw new ApplicationCalculatorException("A taxa de juros deve maior ou igual a zero.");
 
             double calcResult = initialValue * Math.Pow((1 + rate), months);
 
