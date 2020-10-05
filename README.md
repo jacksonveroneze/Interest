@@ -20,7 +20,7 @@ Você precisará das seguintes ferramentas se desejar rodar o projeto usando doc
 Siga estas etapas para para rodar o projeto em produção:
 
   1. Clone o repositório
-  
+
   2. No diretório raiz, restaure os pacotes (nuget) executando:
      ```
      dotnet restore
@@ -33,19 +33,19 @@ Siga estas etapas para para rodar o projeto em produção:
      ```
      dotnet run
      ```
-  4. Agora seus projetos estão em execução, abra o navegador e acesse: https://localhost:6001/swagger:
+  4. Agora seus projetos estão em execução, abra o navegador e acesse: https://localhost:6001/swagger
 
 #### Setup (Com Docker)
 
 Siga estas etapas para para rodar o projeto em produção:
 
   1. Clone o repositório
-  
+
   2. No diretório raiz, execute o comando:
      ```
      docker-compose up -d
      ```
-  3. Agora seus projetos estão em execução, abra o navegador e acesse: https://localhost:8001/swagger:
+  3. Agora seus projetos estão em execução, abra o navegador e acesse: https://localhost:8000/swagger
 
 ### Exemplos
 

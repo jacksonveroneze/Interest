@@ -19,7 +19,7 @@ namespace Interest.Calculator.Application.Services
         //   rate:
         //     The rate param.
         //
-        public double Calc(double initialValue, double months, double rate)
+        public double Calc(double initialValue, int months, double rate)
         {
             if (initialValue <= 0)
                 throw new Exception("O valor inicial deve ser maior que zero.");

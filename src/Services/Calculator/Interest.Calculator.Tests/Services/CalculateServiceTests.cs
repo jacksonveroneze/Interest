@@ -17,10 +17,10 @@ namespace Interest.Calculator.Tests.Services
             double result = calculateService.Calc(100, 5, 0.01);
 
             // Assert
-            Assert.Equal(105.1, result);
+            Assert.Equal(105.11, result);
         }
 
-        [Fact(DisplayName = "Não deve calcular corretamente a taxa de juros.")]
+        [Fact(DisplayName = "Nï¿½o deve calcular corretamente a taxa de juros.")]
         [Trait("Categoria", "CalculateService")]
         public void CalculateService_Calc_NaoDeveCalcularCorretamente()
         {
@@ -31,7 +31,7 @@ namespace Interest.Calculator.Tests.Services
             double result = calculateService.Calc(100, 5, 0.01);
 
             // Assert
-            Assert.NotEqual(105.2, result);
+            Assert.NotEqual(105.20, result);
         }
 
         [Fact(DisplayName = "Deve retornar erro quando informar o valor inicial menor que zero.")]

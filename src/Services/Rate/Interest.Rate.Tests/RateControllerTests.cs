@@ -28,7 +28,7 @@ namespace Interest.Rate.Tests
 
             _httpClient = host.GetTestClient();
 
-            _httpClient.BaseAddress = new Uri("https://localhost:5001");
+            _httpClient.BaseAddress = new Uri("http://localhost:5000");
         }
 
         [Fact(DisplayName = "Deve buscar a taxa de juros corretamente.")]

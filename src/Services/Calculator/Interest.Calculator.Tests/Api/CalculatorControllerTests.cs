@@ -29,7 +29,7 @@ namespace Interest.Calculator.Tests.Api
 
             _httpClient = host.GetTestClient();
 
-            _httpClient.BaseAddress = new Uri("https://localhost:6001");
+            _httpClient.BaseAddress = new Uri("http://localhost:6000");
         }
 
         [Fact(DisplayName = "Deve calcular corretamente a taxa de juros.")]
@@ -45,7 +45,7 @@ namespace Interest.Calculator.Tests.Api
             CalculationResponse result = JsonConvert.DeserializeObject<CalculationResponse>(responseString);
 
             // Assert
-            Assert.Equal(105.1, result.Result);
+            Assert.Equal(105.11, result.Result);
         }
 
         [Fact(DisplayName = "Deve retornar erro quando informar o valor inicial menor que zero.")]

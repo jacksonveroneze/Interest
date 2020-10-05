@@ -42,7 +42,7 @@ namespace Interest.Calculator.API.Controllers
         [Produces(MediaTypeNames.Application.Json)]
         [ProducesResponseType(typeof(CalculationResponse), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<ActionResult<CalculationResponse>> Index(double valorInicial, double meses)
+        public async Task<ActionResult<CalculationResponse>> Index(double valorInicial, int meses)
         {
             try
             {
