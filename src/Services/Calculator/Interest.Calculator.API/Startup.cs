@@ -51,8 +51,8 @@ namespace Interest.Calculator.API
                 })
                 .AddPolicyHandler(retryPolicy);
 
-            services.AddTransient<ICalculateService, CalculateService>();
-            services.AddTransient<IExecuteService, ExecuteService>();
+            services.AddScoped<ICalculateService, CalculateService>();
+            services.AddScoped<IExecuteService, ExecuteService>();
 
             services.AddSwaggerConfiguration();
 
