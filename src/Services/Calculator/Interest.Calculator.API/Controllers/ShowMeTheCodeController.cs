@@ -26,12 +26,12 @@ namespace Interest.Calculator.API.Controllers
 
         //
         // Summary:
-        //     /// Method responsible for action: Index (GET). ///
+        //     /// Method responsible for action: Get (GET). ///
         //
         [HttpGet]
         [Produces(MediaTypeNames.Application.Json)]
-        [ProducesResponseType(typeof(ShowMeTheCodeResult), StatusCodes.Status200OK)]
-        public ActionResult<CalculationResponse> Index()
+        [ApiConventionMethod(typeof(DefaultApiConventions), nameof(DefaultApiConventions.Get))]
+        public ActionResult<CalculationResponse> Get()
             => Ok(new ShowMeTheCodeResult() {Address = "https://github.com/jacksonveroneze/Interest"});
     }
 }

@@ -2,6 +2,7 @@ using System;
 using System.Net.Http;
 using System.Security.Authentication;
 using Interest.Calculator.API.Configuration;
+using Interest.Calculator.API.Middlewares;
 using Interest.Calculator.Application.Http;
 using Interest.Calculator.Application.Interfaces;
 using Interest.Calculator.Application.Services;
@@ -58,6 +59,8 @@ namespace Interest.Calculator.API
 
             services.AddHealthChecks();
 
+            services.AddResponseCompression();
+
             services.AddControllers();
         }
 
@@ -73,6 +76,10 @@ namespace Interest.Calculator.API
             app.UseSwaggerConfiguration();
 
             app.UseHealthChecks("/health");
+
+            app.UseResponseCompression();
+
+            app.UseMiddleware<ErrorHandlingMiddleware>();
 
             app.UseEndpoints(endpoints => endpoints.MapControllers());
         }

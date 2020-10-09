@@ -29,8 +29,7 @@ namespace Interest.Rate.API.Controllers
         //
         [HttpGet]
         [Produces(MediaTypeNames.Application.Json)]
-        [ProducesResponseType(typeof(RateResponse), StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ApiConventionMethod(typeof(DefaultApiConventions), nameof(DefaultApiConventions.Get))]
         public ActionResult<RateResponse> Index()
         {
             _logger.LogInformation("Request: {0}", "Solicitado taxa de juros.");

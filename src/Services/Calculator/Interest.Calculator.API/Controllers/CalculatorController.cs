@@ -36,26 +36,18 @@ namespace Interest.Calculator.API.Controllers
 
         //
         // Summary:
-        //     /// Method responsible for action: Index (GET). ///
+        //     /// Method responsible for action: Get (GET). ///
         //
         [HttpGet]
         [Produces(MediaTypeNames.Application.Json)]
-        [ProducesResponseType(typeof(CalculationResponse), StatusCodes.Status200OK)]
-        [ProducesResponseType(typeof(ErrorResult), StatusCodes.Status400BadRequest)]
-        public async Task<ActionResult<CalculationResponse>> Index(double valorInicial, int meses)
+        [ApiConventionMethod(typeof(DefaultApiConventions), nameof(DefaultApiConventions.Get))]
+        public async Task<ActionResult<CalculationResponse>> Get(double valorInicial, int meses)
         {
             _logger.LogInformation("Request: {0}", "Solicitado cálculo de juros.");
 
-            try
-            {
-                CalculationResponse calculationResponse = await _executeService.Execute(valorInicial, meses);
+            CalculationResponse calculationResponse = await _executeService.Execute(valorInicial, meses);
 
-                return Ok(calculationResponse);
-            }
-            catch (Exception e)
-            {
-                return BadRequest(new ErrorResult() { Message = e.Message});
-            }
+            return Ok(calculationResponse);
         }
     }
 }
