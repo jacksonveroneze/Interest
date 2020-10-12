@@ -2,41 +2,39 @@ using System;
 using System.Net;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 
 namespace Interest.Calculator.API.Middlewares
 {
     public class ErrorHandlingMiddleware
     {
-        private readonly RequestDelegate next;
+        private readonly RequestDelegate _next;
+        private readonly ILogger<ErrorHandlingMiddleware> _logger;
 
-        public ErrorHandlingMiddleware(RequestDelegate next)
-            => this.next = next;
+        public ErrorHandlingMiddleware(RequestDelegate next, ILogger<ErrorHandlingMiddleware> logger)
+        {
+            _next = next;
+            _logger = logger;
+        }
 
         public async Task Invoke(HttpContext context)
         {
             try
             {
-                await next(context);
+                await _next(context);
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
-                await HandleExceptionAsync(context, ex);
+                string result = JsonConvert.SerializeObject(new {error = e.Message});
+
+                context.Response.ContentType = "application/json";
+                context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
+
+                _logger.LogError(result);
+
+                await context.Response.WriteAsync(result);
             }
-        }
-
-        private static Task HandleExceptionAsync(HttpContext context, Exception exception)
-        {
-            HttpStatusCode code = HttpStatusCode.InternalServerError;
-
-            if (exception is Exception) code = HttpStatusCode.NotFound;
-
-            string result = JsonConvert.SerializeObject(new {error = exception.Message});
-
-            context.Response.ContentType = "application/json";
-            context.Response.StatusCode = (int)code;
-
-            return context.Response.WriteAsync(result);
         }
     }
 }

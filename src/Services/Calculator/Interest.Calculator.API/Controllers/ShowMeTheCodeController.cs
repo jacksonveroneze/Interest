@@ -32,6 +32,10 @@ namespace Interest.Calculator.API.Controllers
         [Produces(MediaTypeNames.Application.Json)]
         [ApiConventionMethod(typeof(DefaultApiConventions), nameof(DefaultApiConventions.Get))]
         public ActionResult<CalculationResponse> Get()
-            => Ok(new ShowMeTheCodeResult() {Address = "https://github.com/jacksonveroneze/Interest"});
+        {
+            _logger.LogInformation("Request: {0}", "Solicitado endereço do repositório do projeto.");
+
+            return Ok(new ShowMeTheCodeResult() {Address = "https://github.com/jacksonveroneze/Interest"});
+        }
     }
 }
