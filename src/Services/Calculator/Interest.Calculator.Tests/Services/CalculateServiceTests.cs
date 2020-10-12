@@ -20,7 +20,7 @@ namespace Interest.Calculator.Tests.Services
             Assert.Equal(105.11, result);
         }
 
-        [Fact(DisplayName = "N�o deve calcular corretamente a taxa de juros.")]
+        [Fact(DisplayName = "Não deve calcular corretamente a taxa de juros.")]
         [Trait("Categoria", "CalculateService")]
         public void CalculateService_Calc_NaoDeveCalcularCorretamente()
         {
