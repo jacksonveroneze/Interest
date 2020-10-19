@@ -45,9 +45,7 @@ namespace Interest.Calculator.API.Controllers
         {
             _logger.LogInformation("Request: {0}", "Solicitado cálculo de juros.");
 
-            CalculationResponse calculationResponse = await _executeService.Execute(valorInicial, meses);
-
-            return Ok(calculationResponse);
+            return Ok(await _executeService.Execute(valorInicial, meses));
         }
     }
 }
