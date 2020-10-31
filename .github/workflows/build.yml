@@ -38,5 +38,5 @@ jobs:
         shell: pwsh
         run: |
           .\.sonar\scanner\dotnet-sonarscanner begin /k:"jacksonveroneze_Interest" /o:"jacksonveroneze" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io"
-          dotnet publish src/Services/Calculator/Interest.Calculator.API/Interest.Calculator.API.csproj -c release
+          dotnet build
           .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
